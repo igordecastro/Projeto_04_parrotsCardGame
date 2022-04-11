@@ -1,16 +1,18 @@
 let gifs = [1, 2, 3, 4, 5, 6, 7];
-gifs.sort(comparador);
-
 let shuffleCards = [];
-function comparador() {
-    return Math.random() - 0.5;
-}
 const carta = document.querySelector(".cartas1");
 const carta2 = document.querySelector(".cartas2");
 let escolhidos = [];
-
+let cartasViradas = [];
+let index = 2;
+let cliques = 0;
 let CardQtd = prompt("Com quantas cartas você quer jogar?");
 
+function comparador() {
+    return Math.random() - 0.5;
+}
+
+gifs.sort(comparador);
 while (CardQtd < 4 || CardQtd > 14 || CardQtd % 2 !== 0) {
     CardQtd = prompt("Com quantas cartas você quer jogar?");
 }
@@ -27,7 +29,6 @@ function AddCard(i) {
     </div>
     `
 }
-
 
 for (let i = 0; i < halfqtd; i++) {
     escolhidos.push(gifs[i]);
@@ -48,5 +49,18 @@ for (let i = 0; i < halfqtd; i++) {
 }
 
 function virarCarta(elemento) {
-    elemento.classList.add("selecionada")
+
+    if (cartasViradas.length < index){
+    elemento.classList.toggle("selecionada")
+    cartasViradas.push(this)
+    cliques++;
+    } else {
+    
+    }
+}
+
+function verificaTermino() {
+    if (cartasViradas.length === CardQtd) {
+        alert(`Você ganhou em ${cliques} jogadas!`)
+    }
 }

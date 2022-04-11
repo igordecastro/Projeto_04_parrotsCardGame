@@ -83,3 +83,17 @@ img {
     width: 100px;
     height: 100px;
 }
+/*
+@media (max-width: 767px) {
+    .carta {
+        margin: 5% auto;
+    }
+
+    .titulo {
+        font-size: 36px;
+    }
+
+    .cartas1, .cartas2 {
+        display: initial;
+    }
+}*/
