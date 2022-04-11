@@ -51,9 +51,10 @@ for (let i = 0; i < halfqtd; i++) {
 function virarCarta(elemento) {
 
     if (cartasViradas.length < index){
-    elemento.classList.toggle("selecionada")
-    cartasViradas.push(this)
+    elemento.classList.toggle("selecionada");
+    cartasViradas.push(this);
     cliques++;
+    verificaTermino();
     } else {
     
     }
@@ -61,6 +62,6 @@ function virarCarta(elemento) {
 
 function verificaTermino() {
     if (cartasViradas.length === CardQtd) {
-        alert(`Você ganhou em ${cliques} jogadas!`)
+        alert(`Você ganhou em ${cliques} jogadas!`);
     }
 }
